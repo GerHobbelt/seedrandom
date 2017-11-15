@@ -97,12 +97,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-qunit');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-mocha-cov');
-  grunt.loadNpmTasks('grunt-release');
+  //grunt.loadNpmTasks('grunt-release');
   grunt.loadNpmTasks('grunt-browserify');
 
   grunt.registerTask("test",
       ["browserify", "connect", "qunit", "mochacov:test"]);
   grunt.registerTask("default", ["uglify", "test"]);
-  grunt.registerTask("travis", ["default", "mochacov:coverage"]);
+  grunt.registerTask("travis", ["default"]);
 };
 
